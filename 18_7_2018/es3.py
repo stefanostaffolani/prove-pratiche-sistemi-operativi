@@ -1,7 +1,4 @@
 import subprocess
 
 while True:
-	cmd = input("$")
-	lcmd = cmd.strip().split(' ')
-	result = subprocess.run(lcmd, capture_output=True, shell=False)
-	print(result.stdout.strip().decode('utf-8'))
+    print(subprocess.run([ i for i in input('$').strip().split(' ') if i ], capture_output=True, shell=False).stdout.strip().decode())
